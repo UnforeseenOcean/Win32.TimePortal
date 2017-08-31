@@ -30,3 +30,5 @@ FreeConsole(); // Make the window invisible...
 
   return EXIT_SUCCESS;
 }
+{
+remove("myfile.dat);
